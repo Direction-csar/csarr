@@ -16,7 +16,8 @@ class ChiffresClesController extends Controller
     public function index()
     {
         try {
-            $chiffresCles = ChiffreCle::ordered()->get();
+            // Utiliser safeGetActifs pour éviter les erreurs si la table n'existe pas
+            $chiffresCles = ChiffreCle::safeGetActifs();
             
             return view('admin.chiffres-cles.index', compact('chiffresCles'));
         } catch (\Exception $e) {
@@ -246,9 +247,8 @@ class ChiffresClesController extends Controller
     public function api()
     {
         try {
-            $chiffresCles = ChiffreCle::actifs()
-                ->ordered()
-                ->get()
+            // Utiliser safeGetActifs pour éviter les erreurs si la table n'existe pas
+            $chiffresCles = ChiffreCle::safeGetActifs()
                 ->map(function ($chiffre) {
                     return [
                         'id' => $chiffre->id,

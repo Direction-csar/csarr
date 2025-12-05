@@ -31,14 +31,24 @@ class ChiffreCle extends Model
     public static function safeGetActifs()
     {
         try {
-            // Vérifier d'abord si la table existe
-            if (!self::tableExists()) {
+            // Vérifier d'abord si la table existe avec un try-catch supplémentaire
+            try {
+                if (!self::tableExists()) {
+                    return collect();
+                }
+            } catch (\Exception $e) {
+                // Si la vérification de la table échoue, retourner une collection vide
                 return collect();
             }
             
             // Essayer de récupérer les données avec une double vérification
             try {
                 // Utiliser DB::table directement pour éviter les problèmes avec Eloquent
+                // Mais d'abord vérifier à nouveau si la table existe
+                if (!self::tableExists()) {
+                    return collect();
+                }
+                
                 $results = \Illuminate\Support\Facades\DB::table('chiffres_cles')
                     ->where('statut', 'Actif')
                     ->orderBy('ordre')
@@ -47,6 +57,13 @@ class ChiffreCle extends Model
                         return new self((array) $item);
                     });
                 return $results;
+            } catch (\Illuminate\Database\QueryException $e) {
+                // Si c'est une erreur SQL (table n'existe pas), retourner une collection vide
+                if (str_contains($e->getMessage(), "doesn't exist") || str_contains($e->getMessage(), "Base table")) {
+                    return collect();
+                }
+                // Pour les autres erreurs SQL, retourner aussi une collection vide
+                return collect();
             } catch (\Exception $e) {
                 // Si même DB::table échoue, retourner une collection vide
                 return collect();

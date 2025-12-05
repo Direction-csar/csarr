@@ -4,12 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Schema;
 
 class ChiffreCle extends Model
 {
     use HasFactory;
 
     protected $table = 'chiffres_cles';
+    
+    /**
+     * Vérifier si la table existe avant d'utiliser le modèle
+     */
+    public static function tableExists()
+    {
+        return Schema::hasTable('chiffres_cles');
+    }
 
     protected $fillable = [
         'icone',
@@ -32,6 +41,9 @@ class ChiffreCle extends Model
      */
     public function scopeActifs($query)
     {
+        if (!self::tableExists()) {
+            return $query->whereRaw('1 = 0'); // Retourne une requête vide
+        }
         return $query->where('statut', 'Actif');
     }
 
@@ -40,6 +52,9 @@ class ChiffreCle extends Model
      */
     public function scopeOrdered($query)
     {
+        if (!self::tableExists()) {
+            return $query; // Retourne la requête telle quelle
+        }
         return $query->orderBy('ordre');
     }
 

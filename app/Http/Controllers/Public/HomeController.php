@@ -55,17 +55,28 @@ class HomeController extends Controller
                     'experience' => '0'
                 ];
             } else {
-                $chiffresCles = \App\Models\ChiffreCle::actifs()
-                    ->ordered()
-                    ->get()
-                    ->keyBy('titre');
-                
-                $stats = [
-                    'agents' => $chiffresCles->get('Agents mobilisés', (object)['valeur' => '0'])->valeur ?? '0',
-                    'warehouses' => $chiffresCles->get('Entrepôts de stockage', (object)['valeur' => '0'])->valeur ?? '0',
-                    'capacity' => $chiffresCles->get('Capacité en tonnes', (object)['valeur' => '0'])->valeur ?? '0',
-                    'experience' => $chiffresCles->get('Années d\'expérience', (object)['valeur' => '0'])->valeur ?? '0'
-                ];
+                // Essayer de récupérer les chiffres clés, avec fallback en cas d'erreur
+                try {
+                    $chiffresCles = \App\Models\ChiffreCle::actifs()
+                        ->ordered()
+                        ->get()
+                        ->keyBy('titre');
+                    
+                    $stats = [
+                        'agents' => $chiffresCles->get('Agents mobilisés', (object)['valeur' => '0'])->valeur ?? '0',
+                        'warehouses' => $chiffresCles->get('Entrepôts de stockage', (object)['valeur' => '0'])->valeur ?? '0',
+                        'capacity' => $chiffresCles->get('Capacité en tonnes', (object)['valeur' => '0'])->valeur ?? '0',
+                        'experience' => $chiffresCles->get('Années d\'expérience', (object)['valeur' => '0'])->valeur ?? '0'
+                    ];
+                } catch (\Exception $e) {
+                    // En cas d'erreur lors de la récupération, utiliser les valeurs par défaut
+                    $stats = [
+                        'agents' => '0',
+                        'warehouses' => '0', 
+                        'capacity' => '0',
+                        'experience' => '0'
+                    ];
+                }
             }
         } catch (\Exception $e) {
             // En cas d'erreur, utiliser les valeurs par défaut

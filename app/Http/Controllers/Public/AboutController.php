@@ -71,10 +71,18 @@ class AboutController extends Controller
                 return $this->getDefaultStats();
             }
             
-            $chiffresCles = \App\Models\ChiffreCle::actifs()
-                ->ordered()
-                ->get()
-                ->keyBy('titre');
+            // Essayer de récupérer les chiffres clés, avec fallback en cas d'erreur
+            try {
+                $chiffresCles = \App\Models\ChiffreCle::actifs()
+                    ->ordered()
+                    ->get()
+                    ->keyBy('titre');
+            } catch (\Exception $e) {
+                Log::warning('Erreur lors de la récupération des chiffres clés, utilisation des données par défaut', [
+                    'error' => $e->getMessage()
+                ]);
+                return $this->getDefaultStats();
+            }
                 
             return [
                 'agents' => [

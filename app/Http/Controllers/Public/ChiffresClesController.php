@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Public;
 use App\Http\Controllers\Controller;
 use App\Models\ChiffreCle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class ChiffresClesController extends Controller
 {
@@ -14,6 +15,14 @@ class ChiffresClesController extends Controller
     public function getChiffresCles()
     {
         try {
+            // Vérifier si la table existe
+            if (!Schema::hasTable('chiffres_cles')) {
+                return response()->json([
+                    'success' => true,
+                    'data' => []
+                ]);
+            }
+            
             $chiffresCles = ChiffreCle::actifs()
                 ->ordered()
                 ->get()
@@ -48,6 +57,11 @@ class ChiffresClesController extends Controller
     public static function getChiffresClesForView()
     {
         try {
+            // Vérifier si la table existe
+            if (!Schema::hasTable('chiffres_cles')) {
+                return collect();
+            }
+            
             return ChiffreCle::actifs()
                 ->ordered()
                 ->get();

@@ -13,6 +13,7 @@ use App\Models\Speech;
 use App\Models\HomeBackground;
 use App\Models\TechnicalPartner;
 use App\Models\GalleryImage;
+use Illuminate\Support\Facades\Schema;
 use App\Models\SimReport;
 use App\Models\Notification;
 use App\Services\NotificationService;
@@ -45,17 +46,27 @@ class HomeController extends Controller
         
         // Récupérer les chiffres clés depuis la nouvelle table
         try {
-            $chiffresCles = \App\Models\ChiffreCle::actifs()
-                ->ordered()
-                ->get()
-                ->keyBy('titre');
+            // Vérifier si la table existe avant de l'utiliser
+            if (!\Illuminate\Support\Facades\Schema::hasTable('chiffres_cles')) {
+                $stats = [
+                    'agents' => '0',
+                    'warehouses' => '0', 
+                    'capacity' => '0',
+                    'experience' => '0'
+                ];
+            } else {
+                $chiffresCles = \App\Models\ChiffreCle::actifs()
+                    ->ordered()
+                    ->get()
+                    ->keyBy('titre');
                 
-            $stats = [
-                'agents' => $chiffresCles->get('Agents mobilisés', (object)['valeur' => '0'])->valeur ?? '0',
-                'warehouses' => $chiffresCles->get('Entrepôts de stockage', (object)['valeur' => '0'])->valeur ?? '0',
-                'capacity' => $chiffresCles->get('Capacité en tonnes', (object)['valeur' => '0'])->valeur ?? '0',
-                'experience' => $chiffresCles->get('Années d\'expérience', (object)['valeur' => '0'])->valeur ?? '0'
-            ];
+                $stats = [
+                    'agents' => $chiffresCles->get('Agents mobilisés', (object)['valeur' => '0'])->valeur ?? '0',
+                    'warehouses' => $chiffresCles->get('Entrepôts de stockage', (object)['valeur' => '0'])->valeur ?? '0',
+                    'capacity' => $chiffresCles->get('Capacité en tonnes', (object)['valeur' => '0'])->valeur ?? '0',
+                    'experience' => $chiffresCles->get('Années d\'expérience', (object)['valeur' => '0'])->valeur ?? '0'
+                ];
+            }
         } catch (\Exception $e) {
             // En cas d'erreur, utiliser les valeurs par défaut
             $stats = [

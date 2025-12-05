@@ -1923,7 +1923,7 @@
                 </div>
             </div>
             <div class="col-lg-4 text-center">
-                <img src="{{ asset('images/ministre.jpg') }}" alt="Madame Maimouna DIEYE" class="message-image">
+                <img src="{{ asset('images/ministre.JPG') }}" alt="Madame Maimouna DIEYE" class="message-image">
                 <h4 class="message-name">Madame Maimouna DIEYE</h4>
                 <p class="message-title">Ministre de la Famille et des Solidarités</p>
             </div>

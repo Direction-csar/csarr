@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Public;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Schema;
 use Carbon\Carbon;
 
 class AboutController extends Controller
@@ -64,6 +65,12 @@ class AboutController extends Controller
     private function getPublicStats()
     {
         try {
+            // Vérifier si la table existe avant de l'utiliser
+            if (!\Illuminate\Support\Facades\Schema::hasTable('chiffres_cles')) {
+                Log::warning('Table chiffres_cles n\'existe pas, utilisation des données par défaut');
+                return $this->getDefaultStats();
+            }
+            
             $chiffresCles = \App\Models\ChiffreCle::actifs()
                 ->ordered()
                 ->get()

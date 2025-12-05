@@ -23,20 +23,26 @@ class ChiffresClesController extends Controller
                 ]);
             }
             
-            $chiffresCles = ChiffreCle::actifs()
-                ->ordered()
-                ->get()
-                ->map(function ($chiffre) {
-                    return [
-                        'id' => $chiffre->id,
-                        'icone' => $chiffre->icone,
-                        'titre' => $chiffre->titre,
-                        'valeur' => $chiffre->valeur,
-                        'description' => $chiffre->description,
-                        'couleur' => $chiffre->couleur_complete,
-                        'ordre' => $chiffre->ordre
-                    ];
-                });
+            // Essayer de récupérer les chiffres clés, avec fallback en cas d'erreur
+            try {
+                $chiffresCles = ChiffreCle::actifs()
+                    ->ordered()
+                    ->get()
+                    ->map(function ($chiffre) {
+                        return [
+                            'id' => $chiffre->id,
+                            'icone' => $chiffre->icone,
+                            'titre' => $chiffre->titre,
+                            'valeur' => $chiffre->valeur,
+                            'description' => $chiffre->description,
+                            'couleur' => $chiffre->couleur_complete,
+                            'ordre' => $chiffre->ordre
+                        ];
+                    });
+            } catch (\Exception $e) {
+                // En cas d'erreur, retourner un tableau vide
+                $chiffresCles = collect();
+            }
             
             return response()->json([
                 'success' => true,
@@ -62,9 +68,15 @@ class ChiffresClesController extends Controller
                 return collect();
             }
             
-            return ChiffreCle::actifs()
-                ->ordered()
-                ->get();
+            // Essayer de récupérer les chiffres clés, avec fallback en cas d'erreur
+            try {
+                return ChiffreCle::actifs()
+                    ->ordered()
+                    ->get();
+            } catch (\Exception $e) {
+                // En cas d'erreur, retourner une collection vide
+                return collect();
+            }
         } catch (\Exception $e) {
             return collect(); // Retourner une collection vide en cas d'erreur
         }

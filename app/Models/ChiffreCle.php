@@ -41,10 +41,15 @@ class ChiffreCle extends Model
      */
     public function scopeActifs($query)
     {
-        if (!self::tableExists()) {
-            return $query->whereRaw('1 = 0'); // Retourne une requête vide
+        try {
+            if (!self::tableExists()) {
+                return $query->whereRaw('1 = 0'); // Retourne une requête vide
+            }
+            return $query->where('statut', 'Actif');
+        } catch (\Exception $e) {
+            // En cas d'erreur, retourner une requête vide
+            return $query->whereRaw('1 = 0');
         }
-        return $query->where('statut', 'Actif');
     }
 
     /**
@@ -52,10 +57,32 @@ class ChiffreCle extends Model
      */
     public function scopeOrdered($query)
     {
-        if (!self::tableExists()) {
-            return $query; // Retourne la requête telle quelle
+        try {
+            if (!self::tableExists()) {
+                return $query; // Retourne la requête telle quelle
+            }
+            return $query->orderBy('ordre');
+        } catch (\Exception $e) {
+            // En cas d'erreur, retourner la requête telle quelle
+            return $query;
         }
-        return $query->orderBy('ordre');
+    }
+    
+    /**
+     * Override de la méthode newQuery pour vérifier la table avant de créer une requête
+     */
+    public function newQuery()
+    {
+        try {
+            if (!self::tableExists()) {
+                // Retourner une requête qui ne fera jamais de requête SQL
+                return parent::newQuery()->whereRaw('1 = 0');
+            }
+            return parent::newQuery();
+        } catch (\Exception $e) {
+            // En cas d'erreur, retourner une requête vide
+            return parent::newQuery()->whereRaw('1 = 0');
+        }
     }
 
     /**

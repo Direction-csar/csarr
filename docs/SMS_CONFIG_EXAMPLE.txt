@@ -1,0 +1,31 @@
+# Configuration SMS pour la plateforme CSAR
+# Ajoutez ces lignes à votre fichier .env
+
+# Activer/désactiver le service SMS
+SMS_ENABLED=false
+
+# Fournisseur SMS (orange, wave, generic)
+SMS_PROVIDER=orange
+
+# Configuration générale
+SMS_API_KEY=your_api_key_here
+SMS_API_URL=https://api.orange.com/smsmessaging/v1/outbound
+SMS_SENDER_NAME=CSAR
+
+# Comportement en cas d'erreur SMS
+SMS_FAIL_ON_ERROR=false
+
+# Configuration Orange SMS
+ORANGE_SMS_API_URL=https://api.orange.com/smsmessaging/v1/outbound
+ORANGE_SMS_API_KEY=your_orange_api_key
+ORANGE_SMS_SENDER=CSAR
+
+# Configuration Wave SMS
+WAVE_SMS_API_URL=https://api.wave.com/sms
+WAVE_SMS_API_KEY=your_wave_api_key
+WAVE_SMS_SENDER=CSAR
+
+# Configuration API générique
+GENERIC_SMS_API_URL=https://your-sms-provider.com/api/send
+GENERIC_SMS_API_KEY=your_generic_api_key
+GENERIC_SMS_SENDER=CSAR

@@ -1,0 +1,537 @@
+/* ========================================
+   CSAR DG - Responsive Design Enhancements
+   ======================================== */
+
+/* Variables CSS pour la cohérence */
+:root {
+    --mobile-breakpoint: 768px;
+    --tablet-breakpoint: 992px;
+    --desktop-breakpoint: 1200px;
+    --sidebar-width: 280px;
+    --sidebar-collapsed-width: 80px;
+}
+
+/* ========================================
+   TABLEAUX RESPONSIVES
+   ======================================== */
+
+/* Tableau responsive avec version mobile */
+.responsive-table-container {
+    position: relative;
+}
+
+.responsive-table-desktop {
+    display: block;
+}
+
+.responsive-table-mobile {
+    display: none;
+}
+
+/* Version mobile des tableaux */
+.mobile-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 4px solid var(--primary-color, #667eea);
+}
+
+.mobile-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.mobile-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mobile-card-icon {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    margin-right: 0.75rem;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.mobile-card-title {
+    flex: 1;
+}
+
+.mobile-card-title h6 {
+    margin: 0;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.mobile-card-title small {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+.mobile-card-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.mobile-card-badge {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.mobile-card-content {
+    margin-bottom: 0.75rem;
+}
+
+.mobile-card-content p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #495057;
+    line-height: 1.4;
+}
+
+.mobile-card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-end;
+}
+
+.mobile-card-actions .btn {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    min-width: 35px;
+}
+
+/* ========================================
+   FILTRES RESPONSIVES
+   ======================================== */
+
+.responsive-filters {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filters-desktop {
+    display: flex;
+}
+
+.filters-mobile {
+    display: none;
+}
+
+.filters-mobile .form-group {
+    margin-bottom: 1rem;
+}
+
+.filters-mobile .form-group:last-child {
+    margin-bottom: 0;
+}
+
+.filters-mobile .form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.filters-mobile .form-control,
+.filters-mobile .form-select {
+    font-size: 0.9rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.filters-mobile .form-control:focus,
+.filters-mobile .form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.filters-mobile .btn-group {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.filters-mobile .btn-group .btn {
+    flex: 1;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* ========================================
+   STATISTIQUES RESPONSIVES
+   ======================================== */
+
+.stats-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stats-card-responsive {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-card-responsive::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stats-card-responsive:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.stats-card-responsive .stats-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.stats-card-responsive .stats-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stats-card-responsive .stats-label {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ========================================
+   NAVIGATION RESPONSIVE
+   ======================================== */
+
+.sidebar-responsive {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-overlay.show {
+    opacity: 1;
+}
+
+/* ========================================
+   BREAKPOINTS RESPONSIVES
+   ======================================== */
+
+/* Mobile First - Base styles */
+@media (max-width: 767px) {
+    .responsive-table-desktop {
+        display: none !important;
+    }
+    
+    .responsive-table-mobile {
+        display: block !important;
+    }
+    
+    .filters-desktop {
+        display: none !important;
+    }
+    
+    .filters-mobile {
+        display: block !important;
+    }
+    
+    .stats-responsive {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .stats-card-responsive {
+        padding: 1rem;
+    }
+    
+    .stats-card-responsive .stats-number {
+        font-size: 1.5rem;
+    }
+    
+    .stats-card-responsive .stats-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .mobile-card {
+        padding: 0.75rem;
+    }
+    
+    .mobile-card-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    .mobile-card-title h6 {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-card-title small {
+        font-size: 0.75rem;
+    }
+    
+    .mobile-card-content p {
+        font-size: 0.8rem;
+    }
+    
+    .mobile-card-actions .btn {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+        min-width: 30px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    .responsive-table-desktop {
+        display: none !important;
+    }
+    
+    .responsive-table-mobile {
+        display: block !important;
+    }
+    
+    .filters-desktop {
+        display: none !important;
+    }
+    
+    .filters-mobile {
+        display: block !important;
+    }
+    
+    .stats-responsive {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .mobile-card {
+        padding: 1rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+    .responsive-table-desktop {
+        display: block !important;
+    }
+    
+    .responsive-table-mobile {
+        display: none !important;
+    }
+    
+    .filters-desktop {
+        display: flex !important;
+    }
+    
+    .filters-mobile {
+        display: none !important;
+    }
+    
+    .stats-responsive {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .stats-responsive {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .stats-card-responsive {
+        padding: 2rem;
+    }
+    
+    .stats-card-responsive .stats-number {
+        font-size: 2.5rem;
+    }
+}
+
+/* ========================================
+   ANIMATIONS ET TRANSITIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+/* ========================================
+   UTILITAIRES RESPONSIVES
+   ======================================== */
+
+.text-responsive {
+    font-size: 1rem;
+}
+
+.btn-responsive {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+    .text-responsive {
+        font-size: 0.9rem;
+    }
+    
+    .btn-responsive {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .text-responsive {
+        font-size: 0.85rem;
+    }
+    
+    .btn-responsive {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   MODE SOMBRE RESPONSIVE
+   ======================================== */
+
+.dark-mode .mobile-card {
+    background: rgba(45, 55, 72, 0.95);
+    color: white;
+}
+
+.dark-mode .mobile-card-title h6 {
+    color: white;
+}
+
+.dark-mode .mobile-card-title small {
+    color: #a0aec0;
+}
+
+.dark-mode .mobile-card-content p {
+    color: #e2e8f0;
+}
+
+.dark-mode .responsive-filters {
+    background: rgba(45, 55, 72, 0.95);
+    color: white;
+}
+
+.dark-mode .stats-card-responsive {
+    background: rgba(45, 55, 72, 0.95);
+    color: white;
+}
+
+.dark-mode .stats-card-responsive .stats-label {
+    color: #a0aec0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+<svg width="300" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond du document -->
+  <rect width="300" height="400" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  
+  <!-- En-tête -->
+  <rect width="300" height="60" fill="#2c3e50"/>
+  <text x="150" y="35" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">CSAR</text>
+  
+  <!-- Icône PDF -->
+  <rect x="100" y="120" width="100" height="120" fill="#dc3545" rx="10"/>
+  <text x="150" y="190" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">PDF</text>
+  
+  <!-- Lignes de texte simulées -->
+  <rect x="50" y="280" width="200" height="8" fill="#6c757d" rx="4"/>
+  <rect x="50" y="300" width="150" height="8" fill="#6c757d" rx="4"/>
+  <rect x="50" y="320" width="180" height="8" fill="#6c757d" rx="4"/>
+  
+  <!-- Pied de page -->
+  <text x="150" y="380" text-anchor="middle" fill="#6c757d" font-family="Arial, sans-serif" font-size="12">Document CSAR</text>
+</svg>

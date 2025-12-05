@@ -1,0 +1,28 @@
+-- Création de la table newsletters
+CREATE TABLE IF NOT EXISTS `newsletters` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `content` longtext NOT NULL,
+  `template` varchar(255) NOT NULL DEFAULT 'default',
+  `status` enum('draft','pending','scheduled','sending','sent','failed') NOT NULL DEFAULT 'draft',
+  `scheduled_at` timestamp NULL DEFAULT NULL,
+  `sent_at` timestamp NULL DEFAULT NULL,
+  `sent_by` bigint(20) unsigned DEFAULT NULL,
+  `recipients_count` int(11) NOT NULL DEFAULT 0,
+  `delivered_count` int(11) NOT NULL DEFAULT 0,
+  `opened_count` int(11) NOT NULL DEFAULT 0,
+  `clicked_count` int(11) NOT NULL DEFAULT 0,
+  `bounced_count` int(11) NOT NULL DEFAULT 0,
+  `unsubscribed_count` int(11) NOT NULL DEFAULT 0,
+  `open_rate` decimal(5,2) NOT NULL DEFAULT 0.00,
+  `click_rate` decimal(5,2) NOT NULL DEFAULT 0.00,
+  `metadata` json DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `newsletters_sent_by_foreign` (`sent_by`),
+  KEY `newsletters_status_scheduled_at_index` (`status`,`scheduled_at`),
+  CONSTRAINT `newsletters_sent_by_foreign` FOREIGN KEY (`sent_by`) REFERENCES `users` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

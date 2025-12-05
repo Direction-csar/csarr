@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter des Produits - CSAR</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header .icon {
+            font-size: 72px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+        
+        .content {
+            padding: 35px;
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .alert p {
+            color: #856404;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .btn {
+            display: flex;
+            align-items: center;
+            padding: 20px 25px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .btn.primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: transparent;
+            color: white;
+        }
+        
+        .btn.primary:hover {
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn .icon {
+            font-size: 36px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .btn .text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .btn .text h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .btn.primary .text h3 {
+            color: white;
+        }
+        
+        .btn .text p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .btn.primary .text p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .btn .badge {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+        
+        .btn.primary .badge {
+            background: white;
+            color: #667eea;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 25px 0;
+            color: #999;
+            font-size: 13px;
+            position: relative;
+        }
+        
+        .divider:before,
+        .divider:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #e0e0e0;
+        }
+        
+        .divider:before {
+            left: 0;
+        }
+        
+        .divider:after {
+            right: 0;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .arrow {
+            font-size: 20px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <span class="icon">📦</span>
+                <h1>Ajouter des Produits</h1>
+                <p>Choisissez comment vous voulez ajouter vos produits dans le système</p>
+            </div>
+            
+            <div class="content">
+                <div class="alert">
+                    <p><strong>⚠️ Important :</strong> Vous devez ajouter des produits pour pouvoir créer des mouvements de stock (entrées et sorties).</p>
+                </div>
+                
+                <div class="button-group">
+                    <!-- Option 1 : Formulaire simple -->
+                    <a href="ajouter_produit_manuel.php" class="btn primary">
+                        <span class="icon">✏️</span>
+                        <div class="text">
+                            <h3>
+                                Formulaire Simple
+                                <span class="badge">RECOMMANDÉ</span>
+                            </h3>
+                            <p>Ajoutez vos produits un par un avec un formulaire facile à utiliser</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </a>
+                    
+                    <div class="divider">OU</div>
+                    
+                    <!-- Option 2 : Gestion complète -->
+                    <a href="gestion_produits.php" class="btn">
+                        <span class="icon">🏪</span>
+                        <div class="text">
+                            <h3>Gestion Complète</h3>
+                            <p>Ajoutez, consultez et gérez tous vos produits en un seul endroit</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </a>
+                    
+                    <!-- Option 3 : Guide SQL -->
+                    <a href="GUIDE_AJOUT_MANUEL.md" target="_blank" class="btn">
+                        <span class="icon">📖</span>
+                        <div class="text">
+                            <h3>Guide SQL Manuel</h3>
+                            <p>Exemples SQL pour ajouter vos produits via phpMyAdmin</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>💡 <strong>Astuce :</strong> Commencez avec le formulaire simple, c'est le plus facile !</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Vérifier si le serveur PHP fonctionne
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('ajouter_produit_manuel.php', {method: 'HEAD'})
+                .catch(function() {
+                    const alert = document.querySelector('.alert');
+                    alert.style.background = '#f8d7da';
+                    alert.style.borderColor = '#dc3545';
+                    alert.innerHTML = '<p style="color: #721c24;"><strong>❌ Erreur :</strong> Le serveur PHP ne répond pas. Assurez-vous que XAMPP est démarré (Apache + MySQL).</p>';
+                });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

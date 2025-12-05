@@ -1,0 +1,20 @@
+/* Interface DRH - Design RH */
+.interface-drh {
+  --primary: #059669;
+  --secondary: #10b981;
+  --accent: #d1fae5;
+  --bg-main: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 25%, #d1fae5 100%);
+  background: var(--bg-main);
+}
+
+.interface-drh .content-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.25);
+}
+
+.interface-drh .stat-card {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.15);
+}
+

@@ -1,0 +1,263 @@
+/* Responsive helpers for tables, forms, and grids */
+
+/* Tables: wrap horizontally on small screens */
+.table-responsive-wrapper {
+	width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	border-radius: 10px;
+	border: 1px solid #e5e7eb;
+	background: #fff;
+}
+
+.table-responsive-wrapper table {
+	min-width: 640px;
+}
+
+/* Forms: ensure readable inputs on mobile */
+@media (max-width: 768px) {
+	.form-grid {
+		display: grid;
+		grid-template-columns: 1fr !important;
+		gap: 12px !important;
+	}
+
+	input, select, textarea, button {
+		font-size: 16px !important; /* Prevent iOS zoom */
+	}
+}
+
+/* CRITICAL MOBILE FIXES - Force everything horizontal */
+@media (max-width: 768px) {
+	/* Apply to ALL elements - nuclear option */
+	*, *::before, *::after {
+		writing-mode: horizontal-tb !important;
+		text-orientation: mixed !important;
+		-webkit-writing-mode: horizontal-tb !important;
+		-webkit-text-orientation: mixed !important;
+		-ms-writing-mode: horizontal-tb !important;
+		white-space: normal !important;
+		word-break: break-word !important;
+		overflow-wrap: break-word !important;
+		letter-spacing: normal !important;
+		direction: ltr !important;
+	}
+	
+	/* Remove ALL transforms and rotations */
+	* {
+		transform: none !important;
+		-webkit-transform: none !important;
+		-ms-transform: none !important;
+	}
+	
+	/* Target any inline style with transform or rotate */
+	[style*="transform"], [style*="rotate"], [style*="rotateY"], [style*="rotateX"], [style*="rotateZ"] {
+		transform: none !important;
+		-webkit-transform: none !important;
+		-ms-transform: none !important;
+	}
+	
+	/* Disable animations that might cause layout issues */
+	*, *::before, *::after {
+		animation: none !important;
+		-webkit-animation: none !important;
+		transition: none !important;
+		-webkit-transition: none !important;
+	}
+	
+	/* Force containers to be block layout */
+	.timeline-ultra-modern,
+	.timeline-item,
+	.timeline-content-ultra,
+	.dg-speech-section-ultra-modern,
+	.minister-grid,
+	.speech-content,
+	.minister-photo-container {
+		display: block !important;
+		position: static !important;
+		float: none !important;
+		transform: none !important;
+		-webkit-transform: none !important;
+	}
+	
+	/* Ensure minimum readable font sizes everywhere */
+	body, p, span, div, td, th, li, a, button, input, select, textarea {
+		font-size: 14px !important;
+		line-height: 1.5 !important;
+		text-align: left !important;
+	}
+	
+	h1 { font-size: 24px !important; line-height: 1.3 !important; }
+	h2 { font-size: 20px !important; line-height: 1.3 !important; }
+	h3 { font-size: 18px !important; line-height: 1.3 !important; }
+	h4 { font-size: 16px !important; line-height: 1.3 !important; }
+	h5, h6 { font-size: 14px !important; line-height: 1.3 !important; }
+	
+	/* Force full width for content containers */
+	.container, .timeline-content-ultra, .speech-content {
+		width: 100% !important;
+		max-width: 100% !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+	}
+	
+	/* Kill any perspective effects */
+	* {
+		perspective: none !important;
+		-webkit-perspective: none !important;
+	}
+}
+
+/* Cards grid utility */
+.cards-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 16px;
+}
+
+/* Utilities */
+.hidden-sm { display: block; }
+.only-sm { display: none; }
+
+/* Tablet responsive adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+	.minister-speech-layout {
+		gap: 40px !important;
+	}
+	
+	.minister-photo-container {
+		max-width: 350px !important;
+	}
+	
+	.speech-content-ultra {
+		padding: 40px !important;
+	}
+	
+	.minister-photo {
+		max-width: 320px !important;
+		min-height: 380px !important;
+	}
+}
+
+/* Large desktop adjustments */
+@media (min-width: 1400px) {
+	.minister-speech-layout {
+		gap: 80px !important;
+	}
+	
+	.minister-photo-container {
+		max-width: 450px !important;
+	}
+	
+	.speech-content-ultra {
+		padding: 60px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.hidden-sm { display: none !important; }
+	.only-sm { display: block !important; }
+}
+
+/* Additional mobile safety for specific problematic elements */
+@media (max-width: 768px) {
+	/* Timeline specific overrides */
+	.timeline-item-ultra {
+		flex-direction: column !important;
+		align-items: flex-start !important;
+		margin-bottom: 30px !important;
+		transform: none !important;
+	}
+	
+	.timeline-content-ultra {
+		width: 100% !important;
+		margin: 0 !important;
+		padding: 20px !important;
+		transform: none !important;
+		position: static !important;
+	}
+	
+	.timeline-date-ultra {
+		position: static !important;
+		transform: none !important;
+		margin-bottom: 10px !important;
+		display: block !important;
+	}
+	
+	/* DG Speech section overrides */
+	.dg-speech-section-ultra-modern {
+		grid-template-columns: 1fr !important;
+		gap: 20px !important;
+	}
+	
+	.dg-photo-container-ultra {
+		transform: none !important;
+		margin: 0 auto 20px !important;
+		max-width: 300px !important;
+	}
+	
+	/* Minister section overrides */
+	.minister-grid {
+		grid-template-columns: 1fr !important;
+		gap: 20px !important;
+	}
+	
+	.photo-frame {
+		transform: none !important;
+		perspective: none !important;
+	}
+	
+	.minister-photo {
+		width: 100% !important;
+		height: auto !important;
+		max-width: 250px !important;
+		transform: none !important;
+	}
+	
+	/* Minister speech section responsive layout */
+	.minister-speech-layout {
+		flex-direction: column !important;
+		gap: 30px !important;
+	}
+	
+	.minister-photo-container {
+		flex: none !important;
+		min-width: auto !important;
+		max-width: 100% !important;
+		width: 100% !important;
+	}
+	
+	.speech-content-ultra {
+		flex: none !important;
+		min-width: auto !important;
+		width: 100% !important;
+		padding: 30px !important;
+	}
+}
+
+/* Very small screens (phones < 480px) */
+@media (max-width: 480px) {
+	.minister-speech-layout {
+		gap: 20px !important;
+	}
+	
+	.minister-photo-container {
+		margin-bottom: 20px !important;
+	}
+	
+	.minister-photo {
+		max-width: 280px !important;
+		min-height: 350px !important;
+	}
+	
+	.speech-content-ultra {
+		padding: 20px !important;
+		border-radius: 20px !important;
+	}
+	
+	.photo-frame-ultra {
+		transform: none !important;
+	}
+}

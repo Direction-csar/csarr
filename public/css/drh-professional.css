@@ -1,0 +1,78 @@
+/* ========================================
+   INTERFACE DRH - DESIGN PROFESSIONNEL  
+   Couleurs: Vert pour les ressources humaines
+   ======================================== */
+
+:root {
+  --drh-primary: #059669;
+  --drh-secondary: #10b981;
+  --drh-accent: #34d399;
+  --drh-light: #d1fae5;
+  --drh-dark: #047857;
+  --drh-gradient: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+}
+
+body.interface-drh {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #d1fae5 100%);
+}
+
+.drh-header {
+  background: var(--drh-gradient);
+  color: white;
+  padding: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 10px 30px rgba(5, 150, 105, 0.3);
+  position: relative;
+}
+
+.drh-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+}
+
+.drh-sidebar {
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 100%);
+  border-right: 1px solid #d1fae5;
+  box-shadow: 4px 0 20px rgba(5, 150, 105, 0.1);
+}
+
+.drh-nav-item:hover {
+  background: linear-gradient(90deg, #d1fae520, transparent);
+  border-left-color: var(--drh-secondary);
+  color: var(--drh-dark);
+}
+
+.drh-nav-item.active {
+  background: linear-gradient(90deg, #d1fae540, transparent);
+  border-left-color: var(--drh-primary);
+  color: var(--drh-dark);
+}
+
+.drh-stat-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 1px solid #d1fae5;
+  box-shadow: 0 8px 25px rgba(5, 150, 105, 0.1);
+}
+
+.drh-stat-icon {
+  background: var(--drh-gradient);
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+}
+
+.btn-drh {
+  background: var(--drh-gradient);
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+}
+

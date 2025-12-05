@@ -1,0 +1,335 @@
+/* Styles personnalisés pour les interfaces de connexion CSAR - Version Compacte et Dynamique */
+
+/* ===== ANIMATIONS ET EFFETS VISUELS ===== */
+
+/* Animation d'entrée pour la carte */
+.login-card {
+    animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animation du logo */
+.login-logo {
+    animation: logoGlow 3s ease-in-out infinite alternate;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes logoGlow {
+    from {
+        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    }
+    to {
+        filter: drop-shadow(0 8px 16px rgba(59, 130, 246, 0.3));
+    }
+}
+
+/* Effet de hover sur les boutons */
+.login-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.login-button:hover::before {
+    left: 100%;
+}
+
+.login-button:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Effet de focus sur les inputs */
+.login-input {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(209, 213, 219, 0.5);
+}
+
+.login-input:focus {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05),
+        0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Animation des messages d'erreur */
+.error-message {
+    animation: shakeError 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shakeError {
+    10%, 90% { transform: translateX(-1px); }
+    20%, 80% { transform: translateX(2px); }
+    30%, 50%, 70% { transform: translateX(-4px); }
+    40%, 60% { transform: translateX(4px); }
+}
+
+/* Effet de pulsation pour les identifiants de test */
+.test-credentials {
+    animation: pulseGlow 2s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(59, 130, 246, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    }
+}
+
+/* ===== OPTIMISATIONS RESPONSIVE ===== */
+
+@media (max-width: 640px) {
+    .login-container {
+        padding: 1rem;
+    }
+    
+    .login-card {
+        padding: 1.25rem;
+        margin: 0.5rem;
+        border-radius: 0.75rem;
+    }
+    
+    .login-logo {
+        height: 2.5rem;
+    }
+    
+    .login-title {
+        font-size: 1.125rem;
+    }
+    
+    .login-subtitle {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 1rem;
+        margin: 0.25rem;
+    }
+    
+    .login-title {
+        font-size: 1rem;
+    }
+    
+    .login-subtitle {
+        font-size: 0.6875rem;
+    }
+    
+    .login-input {
+        font-size: 16px; /* Évite le zoom sur iOS */
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+/* ===== EFFETS DE FOND DYNAMIQUES ===== */
+
+.login-bg {
+    background-attachment: fixed;
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== EFFETS DE GROUPE ET INTERACTIONS ===== */
+
+/* Effet de groupe pour les champs */
+.group:hover .input-icon {
+    transform: scale(1.1);
+}
+
+.input-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Effet de focus avec couleur dynamique */
+.group:focus-within .input-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ===== EFFETS DE TEXTE ===== */
+
+.login-title {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== EFFETS DE BORDURE ET OMBRES ===== */
+
+.login-card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ===== EFFETS DE CHARGEMENT ===== */
+
+/* Animation de chargement pour les boutons */
+.login-button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
+}
+
+/* ===== EFFETS D'ACCESSIBILITÉ ===== */
+
+/* Focus visible amélioré */
+.login-input:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+}
+
+.login-button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* ===== EFFETS DE MODE SOMBRE ===== */
+
+@media (prefers-color-scheme: dark) {
+    .login-card {
+        background: rgba(31, 41, 55, 0.9);
+        border-color: rgba(75, 85, 99, 0.3);
+    }
+    
+    .login-title {
+        background: linear-gradient(135deg, #f9fafb, #d1d5db);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .login-input {
+        background: rgba(55, 65, 81, 0.5);
+        border-color: rgba(75, 85, 99, 0.5);
+        color: #f9fafb;
+    }
+    
+    .login-input::placeholder {
+        color: #9ca3af;
+    }
+}
+
+/* ===== EFFETS DE PERFORMANCE ===== */
+
+/* Optimisation pour les écrans haute résolution */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .login-logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ===== EFFETS DE NAVIGATION ===== */
+
+/* Transitions fluides pour les liens */
+a {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+    transform: translateY(-1px);
+}
+
+/* ===== EFFETS DE VALIDATION ===== */
+
+/* Animation pour les champs valides */
+.login-input:valid {
+    border-color: rgba(34, 197, 94, 0.5);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* ===== EFFETS DE PARTICULES (OPTIONNEL) ===== */
+
+/* Effet de particules flottantes */
+.login-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: inherit;
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* ===== EFFETS DE RÉACTIVITÉ ===== */
+
+/* Optimisations pour les écrans tactiles */
+@media (hover: none) and (pointer: coarse) {
+    .login-button {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+    
+    .login-input {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+}
+
+/* ===== EFFETS DE PRINT ===== */
+
+@media print {
+    .login-bg {
+        background: white !important;
+    }
+    
+    .login-card {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+        background: white !important;
+    }
+    
+    .login-button {
+        background: #000 !important;
+        color: white !important;
+    }
+} 

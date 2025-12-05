@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .image-test {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #22c55e;
+            border-radius: 8px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Test d'Affichage des Images</h1>
+    
+    <div class="image-test">
+        <h2>Test 1: Image via storage/gallery</h2>
+        <p><strong>Chemin:</strong> storage/gallery/lbum1TD7HBlO3tgWCipbWkmPaQBTEVjfeaXkoWX1.jpg</p>
+        <img src="storage/gallery/lbum1TD7HBlO3tgWCipbWkmPaQBTEVjfeaXkoWX1.jpg" alt="Test Image 1" 
+             onerror="this.parentElement.innerHTML += '<p class=error>❌ ERREUR: Image non trouvée!</p>'" 
+             onload="this.parentElement.innerHTML += '<p class=success>✅ SUCCESS: Image chargée!</p>'">
+    </div>
+    
+    <div class="image-test">
+        <h2>Test 2: Image via storage/gallery (deuxième image)</h2>
+        <p><strong>Chemin:</strong> storage/gallery/TpxZeGCGOQsDmNbutbpLW2Wam6FXoiTP68ql3TwH.jpg</p>
+        <img src="storage/gallery/TpxZeGCGOQsDmNbutbpLW2Wam6FXoiTP68ql3TwH.jpg" alt="Test Image 2" 
+             onerror="this.parentElement.innerHTML += '<p class=error>❌ ERREUR: Image non trouvée!</p>'" 
+             onload="this.parentElement.innerHTML += '<p class=success>✅ SUCCESS: Image chargée!</p>'">
+    </div>
+    
+    <div class="image-test">
+        <h2>Test 3: Logo CSAR (référence)</h2>
+        <p><strong>Chemin:</strong> images/logos/LOGO CSAR vectoriel-01.png</p>
+        <img src="images/logos/LOGO CSAR vectoriel-01.png" alt="Logo CSAR" 
+             onerror="this.parentElement.innerHTML += '<p class=error>❌ ERREUR: Logo non trouvé!</p>'" 
+             onload="this.parentElement.innerHTML += '<p class=success>✅ SUCCESS: Logo chargé!</p>'">
+    </div>
+    
+    <div class="image-test">
+        <h2>Informations Système</h2>
+        <p><strong>GD Library:</strong> <span id="gd-info">Vérification en cours...</span></p>
+        <p><strong>URL Actuelle:</strong> <span id="current-url"></span></p>
+        <script>
+            document.getElementById('current-url').textContent = window.location.href;
+            
+            // Test GD via PHP
+            fetch('/test-gd.php')
+                .then(r => r.text())
+                .then(text => {
+                    document.getElementById('gd-info').innerHTML = '<span class="success">✅ GD Actif</span>';
+                })
+                .catch(e => {
+                    document.getElementById('gd-info').innerHTML = '<span class="error">❌ Erreur GD</span>';
+                });
+        </script>
+    </div>
+    
+    <div style="margin-top: 40px; padding: 20px; background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+        <h3>📋 Instructions</h3>
+        <ol>
+            <li>Si vous voyez les images ✅ → Le problème vient du code Blade</li>
+            <li>Si vous voyez ❌ → Le problème vient du lien symbolique ou des permissions</li>
+            <li>Vérifiez que Apache est bien redémarré</li>
+        </ol>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

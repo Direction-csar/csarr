@@ -1,0 +1,57 @@
+═══════════════════════════════════════════════════════════════
+    ✅ TOUS LES UTILISATEURS ONT ÉTÉ RECRÉÉS
+═══════════════════════════════════════════════════════════════
+
+🔐 ADMIN
+   URL      : http://localhost:8000/admin/login
+   Email    : admin@csar.sn
+   Password : password
+
+👔 DIRECTEUR GÉNÉRAL (DG)
+   URL      : http://localhost:8000/dg/login
+   Email    : dg@csar.sn
+   Password : password
+
+👤 DRH (Direction des Ressources Humaines)
+   URL      : http://localhost:8000/drh/login
+   Email    : drh@csar.sn
+   Password : password
+
+📦 RESPONSABLE ENTREPÔT
+   URL      : http://localhost:8000/entrepot/login
+   Email    : responsable@csar.sn
+   Password : password
+
+🚚 AGENT
+   URL      : http://localhost:8000/agent/login
+   Email    : agent@csar.sn
+   Password : password
+
+═══════════════════════════════════════════════════════════════
+
+🔴 SI ERREUR "419 PAGE EXPIRED" :
+   1. Fermez COMPLÈTEMENT votre navigateur
+   2. Rouvrez-le
+   3. Ctrl + Shift + Delete → Effacer cookies et cache
+   4. Allez sur l'URL de connexion
+   5. Ctrl + F5 pour forcer le rafraîchissement
+   6. Connectez-vous
+
+✅ OU utilisez le MODE NAVIGATION PRIVÉE (Ctrl + Shift + N)
+
+═══════════════════════════════════════════════════════════════
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

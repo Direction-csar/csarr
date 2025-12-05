@@ -1,0 +1,69 @@
+/* ========================================
+   FIX D'URGENCE CARTE ADMIN
+   ======================================== */
+
+/* Force l'affichage de la carte */
+#map {
+    height: 420px !important;
+    width: 100% !important;
+    background: #1e293b !important;
+    border: 2px solid #10b981 !important;
+    border-radius: 12px !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Conteneur Leaflet forcé */
+#map .leaflet-container {
+    height: 100% !important;
+    width: 100% !important;
+    background: #1e293b !important;
+    z-index: 10000 !important;
+    position: relative !important;
+}
+
+/* Tuiles forcées */
+#map .leaflet-tile {
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+}
+
+/* Override tous les styles conflictuels */
+#map * {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+/* Message de test si la carte ne charge pas */
+#map::before {
+    content: "🗺️ Carte en cours de chargement...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #10b981;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 10001;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #10b981;
+}
+
+/* Masquer le message quand la carte est chargée */
+#map.leaflet-container::before {
+    display: none;
+}
+
+
+
+
+
+
+

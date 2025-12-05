@@ -1,0 +1,331 @@
+/**
+ * Couleurs professionnelles pour l'interface DRH
+ * Palette cohérente et moderne
+ */
+
+/* Palette de couleurs professionnelles */
+:root {
+    /* Couleurs principales */
+    --professional-primary: #059669;      /* Vert CSAR principal */
+    --professional-primary-dark: #047857; /* Vert CSAR foncé */
+    --professional-primary-light: #10b981; /* Vert CSAR clair */
+    
+    /* Couleurs secondaires */
+    --professional-secondary: #64748b;    /* Gris bleu professionnel */
+    --professional-secondary-light: #94a3b8; /* Gris bleu clair */
+    
+    /* Couleurs d'état */
+    --professional-success: #059669;      /* Succès en vert CSAR */
+    --professional-success-light: #d1fae5; /* Succès clair */
+    --professional-warning: #f59e0b;      /* Attention en orange */
+    --professional-warning-light: #fef3c7; /* Attention clair */
+    --professional-danger: #dc2626;       /* Erreur en rouge */
+    --professional-danger-light: #fecaca;  /* Erreur claire */
+    --professional-info: #2563eb;         /* Info en bleu */
+    --professional-info-light: #dbeafe;   /* Info claire */
+    
+    /* Couleurs neutres */
+    --professional-gray-50: #f8fafc;
+    --professional-gray-100: #f1f5f9;
+    --professional-gray-200: #e2e8f0;
+    --professional-gray-300: #cbd5e1;
+    --professional-gray-400: #94a3b8;
+    --professional-gray-500: #64748b;
+    --professional-gray-600: #475569;
+    --professional-gray-700: #334155;
+    --professional-gray-800: #1e293b;
+    --professional-gray-900: #0f172a;
+    
+    /* Couleurs de texte */
+    --professional-text-primary: #1e293b;
+    --professional-text-secondary: #64748b;
+    --professional-text-muted: #94a3b8;
+    
+    /* Couleurs de fond */
+    --professional-bg-primary: #ffffff;
+    --professional-bg-secondary: #f8fafc;
+    --professional-bg-tertiary: #f1f5f9;
+}
+
+/* Application des couleurs professionnelles */
+.drh-interface {
+    background: var(--professional-bg-secondary);
+    color: var(--professional-text-primary);
+}
+
+/* Page title avec gradient professionnel */
+.drh-page-title {
+    background: linear-gradient(135deg, var(--professional-primary) 0%, var(--professional-primary-dark) 100%);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Cartes avec bordures subtiles */
+.drh-card {
+    background: var(--professional-bg-primary);
+    border: 1px solid var(--professional-gray-200);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.drh-card-header {
+    background: linear-gradient(135deg, var(--professional-gray-50) 0%, var(--professional-gray-100) 100%);
+    border-bottom: 1px solid var(--professional-gray-200);
+}
+
+/* Statistiques avec couleurs cohérentes */
+.drh-stat-card {
+    background: var(--professional-bg-primary);
+    border: 1px solid var(--professional-gray-200);
+    transition: all 0.3s ease;
+}
+
+.drh-stat-card:hover {
+    border-color: var(--professional-primary-light);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Barres de couleur pour les statistiques */
+.drh-stat-card:nth-child(1)::before {
+    background: linear-gradient(90deg, var(--professional-primary), var(--professional-primary-light));
+}
+
+.drh-stat-card:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--professional-info), #3b82f6);
+}
+
+.drh-stat-card:nth-child(3)::before {
+    background: linear-gradient(90deg, var(--professional-warning), #fbbf24);
+}
+
+.drh-stat-card:nth-child(4)::before {
+    background: linear-gradient(90deg, var(--professional-danger), #ef4444);
+}
+
+/* Icônes des statistiques */
+.drh-stat-card:nth-child(1) .drh-stat-icon {
+    background: linear-gradient(135deg, var(--professional-primary), var(--professional-primary-light));
+}
+
+.drh-stat-card:nth-child(2) .drh-stat-icon {
+    background: linear-gradient(135deg, var(--professional-info), #3b82f6);
+}
+
+.drh-stat-card:nth-child(3) .drh-stat-icon {
+    background: linear-gradient(135deg, var(--professional-warning), #fbbf24);
+}
+
+.drh-stat-card:nth-child(4) .drh-stat-icon {
+    background: linear-gradient(135deg, var(--professional-danger), #ef4444);
+}
+
+/* Boutons avec couleurs professionnelles */
+.drh-btn-primary {
+    background: linear-gradient(135deg, var(--professional-primary), var(--professional-primary-dark));
+    color: white;
+    border: none;
+}
+
+.drh-btn-primary:hover {
+    background: linear-gradient(135deg, var(--professional-primary-dark), var(--professional-primary));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.drh-btn-success {
+    background: linear-gradient(135deg, var(--professional-success), var(--professional-primary-dark));
+    color: white;
+    border: none;
+}
+
+.drh-btn-success:hover {
+    background: linear-gradient(135deg, var(--professional-primary-dark), var(--professional-success));
+    transform: translateY(-1px);
+}
+
+.drh-btn-warning {
+    background: linear-gradient(135deg, var(--professional-warning), #d97706);
+    color: white;
+    border: none;
+}
+
+.drh-btn-warning:hover {
+    background: linear-gradient(135deg, #d97706, var(--professional-warning));
+    transform: translateY(-1px);
+}
+
+.drh-btn-danger {
+    background: linear-gradient(135deg, var(--professional-danger), #b91c1c);
+    color: white;
+    border: none;
+}
+
+.drh-btn-danger:hover {
+    background: linear-gradient(135deg, #b91c1c, var(--professional-danger));
+    transform: translateY(-1px);
+}
+
+.drh-btn-secondary {
+    background: var(--professional-bg-primary);
+    color: var(--professional-text-primary);
+    border: 2px solid var(--professional-gray-300);
+}
+
+.drh-btn-secondary:hover {
+    background: var(--professional-gray-50);
+    border-color: var(--professional-primary);
+    color: var(--professional-primary);
+}
+
+/* Badges avec couleurs professionnelles */
+.drh-badge-primary {
+    background: var(--professional-primary-light);
+    color: var(--professional-primary-dark);
+    border: 1px solid var(--professional-primary);
+}
+
+.drh-badge-success {
+    background: var(--professional-success-light);
+    color: var(--professional-primary-dark);
+    border: 1px solid var(--professional-success);
+}
+
+.drh-badge-warning {
+    background: var(--professional-warning-light);
+    color: #92400e;
+    border: 1px solid var(--professional-warning);
+}
+
+.drh-badge-danger {
+    background: var(--professional-danger-light);
+    color: #991b1b;
+    border: 1px solid var(--professional-danger);
+}
+
+.drh-badge-info {
+    background: var(--professional-info-light);
+    color: #1e40af;
+    border: 1px solid var(--professional-info);
+}
+
+/* Tables avec design professionnel */
+.drh-table-container {
+    background: var(--professional-bg-primary);
+    border: 1px solid var(--professional-gray-200);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.drh-table thead {
+    background: linear-gradient(135deg, var(--professional-gray-50) 0%, var(--professional-gray-100) 100%);
+}
+
+.drh-table th {
+    color: var(--professional-text-primary);
+    border-bottom: 2px solid var(--professional-gray-200);
+}
+
+.drh-table td {
+    color: var(--professional-text-primary);
+    border-bottom: 1px solid var(--professional-gray-100);
+}
+
+.drh-table tbody tr:hover {
+    background: var(--professional-gray-50);
+}
+
+/* Formulaires avec design professionnel */
+.drh-form-input {
+    background: var(--professional-bg-primary);
+    border: 2px solid var(--professional-gray-200);
+    color: var(--professional-text-primary);
+}
+
+.drh-form-input:focus {
+    border-color: var(--professional-primary);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+    background: var(--professional-bg-primary);
+}
+
+.drh-form-input.error {
+    border-color: var(--professional-danger);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.drh-form-input.success {
+    border-color: var(--professional-success);
+    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+}
+
+/* Alerts avec couleurs professionnelles */
+.drh-alert-success {
+    background: var(--professional-success-light);
+    border-left-color: var(--professional-success);
+    color: #166534;
+}
+
+.drh-alert-warning {
+    background: var(--professional-warning-light);
+    border-left-color: var(--professional-warning);
+    color: #92400e;
+}
+
+.drh-alert-danger {
+    background: var(--professional-danger-light);
+    border-left-color: var(--professional-danger);
+    color: #991b1b;
+}
+
+.drh-alert-info {
+    background: var(--professional-info-light);
+    border-left-color: var(--professional-info);
+    color: #1e40af;
+}
+
+/* Sidebar avec couleurs professionnelles */
+.drh-sidebar {
+    background: linear-gradient(180deg, var(--professional-primary) 0%, var(--professional-primary-dark) 100%);
+}
+
+/* Navigation avec hover effects professionnels */
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Responsive design avec couleurs professionnelles */
+@media (max-width: 768px) {
+    .drh-card {
+        margin: 0 1rem;
+    }
+    
+    .drh-page-title {
+        margin: 0 1rem 2rem;
+        padding: 1.5rem;
+    }
+    
+    .drh-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 0 1rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .drh-stats-grid {
+        grid-template-columns: 1fr;
+        margin: 0 1rem 2rem;
+    }
+    
+    .drh-page-title h1 {
+        font-size: 1.5rem;
+    }
+    
+    .drh-page-title p {
+        font-size: 0.875rem;
+    }
+}

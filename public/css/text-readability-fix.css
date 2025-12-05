@@ -1,0 +1,162 @@
+/* ========================================
+   CORRECTION DE LISIBILITÉ DES TEXTES
+   CSAR Platform - Fix pour textes illisibles
+   ======================================== */
+
+/* Force la lisibilité de tous les textes - Version renforcée */
+* {
+    color: inherit !important;
+}
+
+/* Correction spécifique pour les pages de tâches */
+.tasks-container * {
+    color: #1e293b !important;
+}
+
+.tasks-container .card-title {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+.tasks-container .form-label {
+    color: #1e293b !important;
+    font-weight: 500 !important;
+}
+
+.tasks-container .task-title {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+.tasks-container .task-description {
+    color: #475569 !important;
+}
+
+/* Correction pour l'agenda */
+.agenda-container * {
+    color: #1e293b !important;
+}
+
+.agenda-container .week-title {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+.agenda-container .day-name {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+.agenda-container .event-title {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+/* Correction spécifique pour les cartes */
+.card, .card * {
+    color: #1e293b !important;
+}
+
+.card-body, .card-body * {
+    color: #1e293b !important;
+}
+
+/* Correction des titres */
+h1, h2, h3, h4, h5, h6 {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+/* Correction des labels de formulaire */
+label, .form-label {
+    color: #1e293b !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+}
+
+/* Correction des inputs et selects */
+input, select, textarea {
+    color: #1e293b !important;
+    background-color: #ffffff !important;
+}
+
+/* Correction des options dans les selects */
+option {
+    color: #1e293b !important;
+    background-color: #ffffff !important;
+}
+
+/* Correction des textes dans les listes */
+ul li, ol li {
+    color: #1e293b !important;
+}
+
+/* Correction des textes dans les sections d'aide */
+.list-unstyled li {
+    color: #1e293b !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.list-unstyled li strong {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+/* Correction des descriptions */
+.form-text {
+    color: #64748b !important;
+    font-size: 0.875rem !important;
+}
+
+/* Correction des boutons */
+.btn {
+    color: inherit !important;
+}
+
+.btn-primary {
+    color: white !important;
+}
+
+.btn-secondary {
+    color: white !important;
+}
+
+.btn-outline-primary {
+    color: #2563eb !important;
+}
+
+/* Correction des textes dans les cartes d'aide */
+.card .card-body h6 {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    font-size: 1rem !important;
+}
+
+/* Correction des textes secondaires */
+.text-muted {
+    color: #64748b !important;
+}
+
+.text-secondary {
+    color: #475569 !important;
+}
+
+/* Force la visibilité des textes */
+body {
+    color: #1e293b !important;
+}
+
+.container-fluid {
+    color: #1e293b !important;
+}
+
+.row {
+    color: #1e293b !important;
+}
+
+.col-md-8, .col-md-4 {
+    color: #1e293b !important;
+}

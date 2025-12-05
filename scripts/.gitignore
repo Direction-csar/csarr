@@ -1,0 +1,4 @@
+# Scripts temporaires
+*.log
+*.tmp
+*.cache

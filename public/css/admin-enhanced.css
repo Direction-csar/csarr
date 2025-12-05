@@ -1,0 +1,51 @@
+/* ========================================
+   INTERFACE ADMIN - DESIGN ULTRA-PROFESSIONNEL
+   Couleurs: Bleu corporate pour l'administration
+   ======================================== */
+
+.interface-admin {
+  --primary: #1e40af;
+  --primary-dark: #1e3a8a;
+  --primary-light: #60a5fa;
+  --secondary: #3b82f6;
+  --accent: #dbeafe;
+  --bg-main: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #dbeafe 100%);
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --shadow-admin: 0 10px 30px rgba(30, 64, 175, 0.15);
+}
+
+.interface-admin {
+  background: var(--bg-main);
+}
+
+.interface-admin .content-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  position: relative;
+}
+
+.interface-admin .content-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="adminGrid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23adminGrid)"/></svg>');
+  opacity: 0.3;
+}
+
+.interface-admin .stat-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(30, 64, 175, 0.2);
+  box-shadow: var(--shadow-admin);
+}
+
+.interface-admin .stat-card::before {
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary-light));
+}
+
+.interface-admin .btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);
+}
+

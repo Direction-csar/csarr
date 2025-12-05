@@ -1,0 +1,143 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║              📋 URLS CORRECTES POUR ACCÉDER AU SITE CSAR             ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+
+⚠️  IMPORTANT : Votre serveur Laravel tourne sur le PORT 8000
+    Utilisez "localhost:8000" et NON "localhost/csar/public"
+
+
+═══════════════════════════════════════════════════════════════════════
+  ✅ URLS CORRECTES (Serveur Laravel - Port 8000)
+═══════════════════════════════════════════════════════════════════════
+
+📝 FORMULAIRE DE DEMANDE :
+   → http://localhost:8000/demande
+   ✅ UTILISEZ CETTE URL !
+
+🏠 PAGE D'ACCUEIL :
+   → http://localhost:8000
+   → http://localhost:8000/fr
+
+🔍 SUIVRE UNE DEMANDE :
+   → http://localhost:8000/suivre-ma-demande
+   → http://localhost:8000/track
+
+📧 NEWSLETTER :
+   → http://localhost:8000/newsletter
+
+📰 ACTUALITÉS :
+   → http://localhost:8000/actualites
+
+📊 STATISTIQUES :
+   → http://localhost:8000/stats
+
+🎬 FORMULAIRE ACTION :
+   → http://localhost:8000/action
+
+🔐 CONNEXION ADMIN :
+   → http://localhost:8000/login
+   → http://localhost:8000/admin/dashboard
+
+
+═══════════════════════════════════════════════════════════════════════
+  ❌ URLS À NE PAS UTILISER (Apache - Port 80)
+═══════════════════════════════════════════════════════════════════════
+
+❌ http://localhost/csar/public/demande
+❌ http://localhost/csar/public/action
+❌ http://localhost/csar/public/...
+
+Ces URLs ne fonctionneront PAS car :
+- Laravel utilise son propre serveur sur le port 8000
+- Le dossier "public" n'est pas exposé directement
+
+
+═══════════════════════════════════════════════════════════════════════
+  🔧 COMMENT DÉMARRER LE SERVEUR ?
+═══════════════════════════════════════════════════════════════════════
+
+Si le serveur n'est pas démarré, lancez :
+
+   cd c:\xampp\htdocs\csar
+   php artisan serve
+
+Vous verrez :
+   "Server started on http://localhost:8000"
+
+Le serveur est DÉJÀ EN COURS sur votre machine ! ✅
+
+
+═══════════════════════════════════════════════════════════════════════
+  🎯 TESTER MAINTENANT
+═══════════════════════════════════════════════════════════════════════
+
+1. Cliquez sur ce lien (ou copiez-collez dans votre navigateur) :
+   
+   👉 http://localhost:8000/demande
+
+2. Remplissez le formulaire
+
+3. Cliquez sur "Envoyer ma demande"
+
+4. Vous verrez la popup de confirmation verte avec votre code de suivi ! 🎉
+
+
+═══════════════════════════════════════════════════════════════════════
+  📱 URLS ALTERNATIVES (Si besoin)
+═══════════════════════════════════════════════════════════════════════
+
+Si vous voulez utiliser Apache (port 80), il faut configurer un Virtual Host.
+Pour l'instant, utilisez le serveur Laravel (port 8000).
+
+
+═══════════════════════════════════════════════════════════════════════
+  ✅ CHECKLIST
+═══════════════════════════════════════════════════════════════════════
+
+□ Le serveur Laravel est démarré (php artisan serve) ✅ DÉJÀ FAIT
+□ J'utilise l'URL http://localhost:8000/demande
+□ Le formulaire s'affiche correctement
+□ Je peux soumettre une demande
+□ Je vois la popup de confirmation
+
+
+═══════════════════════════════════════════════════════════════════════
+  💡 ASTUCE
+═══════════════════════════════════════════════════════════════════════
+
+Mettez en favori :
+   http://localhost:8000/demande
+
+Pour accéder rapidement au formulaire la prochaine fois !
+
+
+═══════════════════════════════════════════════════════════════════════
+
+              🎊 VOTRE FORMULAIRE VOUS ATTEND ! 🎊
+              
+           Ouvrez : http://localhost:8000/demande
+
+═══════════════════════════════════════════════════════════════════════
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

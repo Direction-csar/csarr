@@ -1,0 +1,30 @@
+# robots.txt pour CSAR Platform
+# Commissariat à la Sécurité Alimentaire et à la Résilience
+
+User-agent: *
+Allow: /
+
+# Bloquer les interfaces admin
+Disallow: /admin/
+Disallow: /drh/
+Disallow: /dg/
+Disallow: /agent/
+Disallow: /entrepot/
+Disallow: /responsable/
+
+# Bloquer les fichiers sensibles
+Disallow: /storage/
+Disallow: /.env
+Disallow: /vendor/
+Disallow: /bootstrap/
+Disallow: /config/
+
+# Bloquer les pages de test
+Disallow: /test
+Disallow: /debug
+
+# Sitemap
+Sitemap: https://csar.sn/sitemap.xml
+
+# Crawl-delay (optionnel, pour limiter la charge)
+Crawl-delay: 1

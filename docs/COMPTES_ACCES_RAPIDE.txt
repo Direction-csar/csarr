@@ -1,0 +1,60 @@
+═══════════════════════════════════════════════════════════════
+    🔐 COMPTES D'ACCÈS RAPIDE - PLATEFORME CSAR
+    ✅ IDENTIFIANTS ACTUALISÉS - 20 OCTOBRE 2025
+═══════════════════════════════════════════════════════════════
+
+⚠️  IMPORTANT: Tous les mots de passe ont été réinitialisés !
+
+───────────────────────────────────────────────────────────────
+
+👤 ADMINISTRATEUR
+   Email    : admin@csar.sn
+   Password : password
+   URL      : http://localhost:8000/admin/login
+   
+👔 DIRECTEUR GÉNÉRAL (DG)
+   Email    : dg@csar.sn
+   Password : password
+   URL      : http://localhost:8000/dg/login
+   
+📦 GESTIONNAIRE D'ENTREPÔT
+   Email    : entrepot@csar.sn
+   Password : password
+   URL      : http://localhost:8000/entrepot/login
+   
+👤 DRH
+   Email    : drh@csar.sn
+   Password : password
+   URL      : http://localhost:8000/
+
+───────────────────────────────────────────────────────────────
+
+🚀 DÉMARRAGE RAPIDE:
+   1. Ouvrez un terminal dans C:\xampp\htdocs\csar
+   2. Exécutez: php artisan serve
+   3. Ouvrez l'URL correspondant à votre rôle
+   4. Connectez-vous avec l'email et le mot de passe
+
+📌 RÉSOLUTION DES PROBLÈMES:
+   - Si connexion impossible: php reset_passwords.php
+   - Si erreur de cache: php artisan cache:clear
+   - Pour diagnostic complet: php diagnostic_connexion_complet.php
+
+⚠️  ATTENTION: Changez tous les mots de passe en production !
+
+═══════════════════════════════════════════════════════════════
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

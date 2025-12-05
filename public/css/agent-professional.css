@@ -1,0 +1,74 @@
+/* ========================================
+   INTERFACE AGENT - DESIGN PROFESSIONNEL
+   Couleurs: Rouge pour les agents de terrain
+   ======================================== */
+
+:root {
+  --agent-primary: #dc2626;
+  --agent-secondary: #ef4444;
+  --agent-accent: #f87171;
+  --agent-light: #fee2e2;
+  --agent-dark: #b91c1c;
+  --agent-gradient: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+}
+
+body.interface-agent {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 50%, #fecaca 100%);
+}
+
+.agent-header {
+  background: var(--agent-gradient);
+  color: white;
+  padding: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+  position: relative;
+}
+
+.agent-header::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 20px;
+  background: rgba(220, 38, 38, 0.2);
+  border-radius: 50%;
+  filter: blur(10px);
+}
+
+.agent-sidebar {
+  background: linear-gradient(180deg, #ffffff 0%, #fef2f2 100%);
+  border-right: 1px solid #fee2e2;
+  box-shadow: 4px 0 20px rgba(220, 38, 38, 0.1);
+}
+
+.agent-nav-item:hover {
+  background: linear-gradient(90deg, #fee2e220, transparent);
+  border-left-color: var(--agent-secondary);
+  color: var(--agent-dark);
+}
+
+.agent-nav-item.active {
+  background: linear-gradient(90deg, #fee2e240, transparent);
+  border-left-color: var(--agent-primary);
+  color: var(--agent-dark);
+}
+
+.agent-stat-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+  border: 1px solid #fee2e2;
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.1);
+}
+
+.agent-stat-icon {
+  background: var(--agent-gradient);
+  box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+}
+
+.btn-agent {
+  background: var(--agent-gradient);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+

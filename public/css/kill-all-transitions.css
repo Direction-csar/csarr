@@ -1,0 +1,100 @@
+/* ========================================
+   SUPPRESSION ULTRA-AGRESSIVE DE TOUTES LES TRANSITIONS
+   ======================================== */
+
+/* Supprimer TOUTES les transitions et animations */
+*, *::before, *::after {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    animation-fill-mode: none !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+    transition-timing-function: linear !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Supprimer toutes les animations */
+@keyframes fadeIn { from { opacity: 1; } to { opacity: 1; } }
+@keyframes slideIn { from { transform: none; } to { transform: none; } }
+@keyframes fadeInUp { from { opacity: 1; transform: none; } to { opacity: 1; transform: none; } }
+@keyframes slideInUp { from { opacity: 1; transform: none; } to { opacity: 1; transform: none; } }
+@keyframes fadeInSlide { from { opacity: 1; transform: none; } to { opacity: 1; transform: none; } }
+@keyframes fadeOutSlide { from { opacity: 1; transform: none; } to { opacity: 1; transform: none; } }
+@keyframes shimmer { from { background-position: 0 0; } to { background-position: 0 0; } }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(0deg); } }
+@keyframes pulse { from { opacity: 1; } to { opacity: 1; } }
+@keyframes bounce { from { transform: none; } to { transform: none; } }
+@keyframes shake { from { transform: none; } to { transform: none; } }
+@keyframes zoomIn { from { transform: scale(1); } to { transform: scale(1); } }
+@keyframes zoomOut { from { transform: scale(1); } to { transform: scale(1); } }
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(0deg); } }
+@keyframes scale { from { transform: scale(1); } to { transform: scale(1); } }
+@keyframes translate { from { transform: translate(0); } to { transform: translate(0); } }
+
+/* Supprimer toutes les classes d'animation */
+.fade-in, .fade-in-up, .slide-in, .slide-in-up, .fade-in-slide, .fade-out-slide,
+.shimmer, .spin, .pulse, .bounce, .shake, .zoom-in, .zoom-out, .rotate, .scale, .translate,
+.animate, .animated, .animation, .transition, .transitions,
+.dashboard-container, .page-header, .stats-row, .stat-card, .dashboard-grid, .dashboard-card,
+.hero-bg-slide, .hero-nav, .hero-indicator, .partner-card-pro, .gradient-orb,
+.admin-card, .dg-card, .admin-nav-item, .dg-nav-item,
+.admin-btn, .dg-btn, .admin-table, .dg-table,
+.admin-form-input, .dg-form-input, .admin-status, .dg-status {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Supprimer tous les loaders et spinners */
+.loader, .spinner, .loading, [class*="loading"], [class*="spinner"],
+.loading-spinner, .loading-overlay, .loading-screen, .loading-indicator {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Forcer l'affichage immédiat */
+.dashboard-container, .dashboard-container *, .page-header, .stats-row, .stat-card,
+.dashboard-grid, .dashboard-card, .admin-content, .dg-content,
+.admin-main, .dg-main, .admin-sidebar, .dg-sidebar {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    display: block !important;
+}
+
+/* Supprimer les effets hover */
+*:hover {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Supprimer les effets focus */
+*:focus {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* Supprimer les effets active */
+*:active {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+
+
+
+
+
+

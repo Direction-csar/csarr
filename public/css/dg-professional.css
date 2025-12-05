@@ -1,0 +1,77 @@
+/* ========================================
+   INTERFACE DG - DESIGN PROFESSIONNEL
+   Couleurs: Violet pour la direction générale
+   ======================================== */
+
+:root {
+  --dg-primary: #7c3aed;
+  --dg-secondary: #8b5cf6;
+  --dg-accent: #a78bfa;
+  --dg-light: #e9d5ff;
+  --dg-dark: #6d28d9;
+  --dg-gradient: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 50%, #a78bfa 100%);
+}
+
+body.interface-dg {
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 50%, #e9d5ff 100%);
+}
+
+.dg-header {
+  background: var(--dg-gradient);
+  color: white;
+  padding: 2rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  position: relative;
+}
+
+.dg-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.dg-sidebar {
+  background: linear-gradient(180deg, #ffffff 0%, #faf5ff 100%);
+  border-right: 1px solid #e9d5ff;
+  box-shadow: 4px 0 20px rgba(124, 58, 237, 0.1);
+}
+
+.dg-nav-item:hover {
+  background: linear-gradient(90deg, #e9d5ff20, transparent);
+  border-left-color: var(--dg-secondary);
+  color: var(--dg-dark);
+}
+
+.dg-nav-item.active {
+  background: linear-gradient(90deg, #e9d5ff40, transparent);
+  border-left-color: var(--dg-primary);
+  color: var(--dg-dark);
+}
+
+.dg-stat-card {
+  background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
+  border: 1px solid #e9d5ff;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.1);
+}
+
+.dg-stat-icon {
+  background: var(--dg-gradient);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.btn-dg {
+  background: var(--dg-gradient);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+

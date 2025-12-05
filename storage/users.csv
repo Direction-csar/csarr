@@ -1,0 +1,16 @@
+id,name,email,phone,role,created_at,email_verified_at
+1,"Administrateur CSAR",admin@csar.sn,+221701234567,admin,"2025-09-15 08:30:45","2025-09-16 23:39:40"
+2,"DRH CSAR",drh@csar.sn,,,"2025-09-15 08:30:45",
+3,"Directrice Générale",dg@csar.sn,+221701234568,dg,"2025-09-15 08:30:45","2025-09-16 23:39:41"
+4,"Agent CSAR",agent@csar.sn,+221701234570,agent,"2025-09-15 08:30:45","2025-09-16 23:39:41"
+5,"Responsable Entrepôt Dakar",responsable@csar.sn,+221701234569,responsable,"2025-09-15 08:30:45","2025-09-16 23:39:41"
+6,"Agent CSAR 1",agent1@csar.sn,+221701234571,agent,"2025-09-16 23:39:55",
+7,"Agent CSAR 2",agent2@csar.sn,+221701234572,agent,"2025-09-16 23:39:55",
+8,"Agent CSAR 3",agent3@csar.sn,+221701234573,agent,"2025-09-16 23:39:56",
+9,"Agent CSAR 4",agent4@csar.sn,+221701234574,agent,"2025-09-16 23:39:56",
+10,"Agent CSAR 5",agent5@csar.sn,+221701234575,agent,"2025-09-16 23:39:56",
+11,"Agent CSAR 6",agent6@csar.sn,+221701234576,agent,"2025-09-16 23:39:56",
+12,"Agent CSAR 7",agent7@csar.sn,+221701234577,agent,"2025-09-16 23:39:57",
+13,"Agent CSAR 8",agent8@csar.sn,+221701234578,agent,"2025-09-16 23:39:57",
+14,"Agent CSAR 9",agent9@csar.sn,+221701234579,agent,"2025-09-16 23:39:57",
+15,"Agent CSAR 10",agent10@csar.sn,+221701234580,agent,"2025-09-16 23:39:57",

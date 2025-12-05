@@ -1,0 +1,493 @@
+/* Styles professionnels pour l'administration CSAR */
+
+/* Variables CSS globales */
+:root {
+    /* Couleurs de base professionnelles */
+    --admin-bg-primary: #ffffff;
+    --admin-bg-secondary: #f8fafc;
+    --admin-bg-tertiary: #f1f5f9;
+    --admin-text-primary: #1e293b;
+    --admin-text-secondary: #475569;
+    --admin-text-muted: #64748b;
+    --admin-border: #e2e8f0;
+    --admin-border-hover: #cbd5e1;
+    --admin-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --admin-shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    
+    /* Couleurs de statut professionnelles */
+    --status-todo: #6366f1;
+    --status-todo-bg: #eef2ff;
+    --status-todo-text: #3730a3;
+    
+    --status-progress: #f59e0b;
+    --status-progress-bg: #fef3c7;
+    --status-progress-text: #92400e;
+    
+    --status-done: #10b981;
+    --status-done-bg: #d1fae5;
+    --status-done-text: #065f46;
+    
+    --status-urgent: #ef4444;
+    --status-urgent-bg: #fee2e2;
+    --status-urgent-text: #991b1b;
+    
+    --status-overdue: #6b7280;
+    --status-overdue-bg: #f3f4f6;
+    --status-overdue-text: #374151;
+    
+    /* Couleurs des alertes */
+    --alert-critical: #dc2626;
+    --alert-critical-bg: #fef2f2;
+    --alert-critical-text: #991b1b;
+    
+    --alert-high: #d97706;
+    --alert-high-bg: #fffbeb;
+    --alert-high-text: #92400e;
+    
+    --alert-medium: #0891b2;
+    --alert-medium-bg: #ecfeff;
+    --alert-medium-text: #0e7490;
+    
+    --alert-low: #059669;
+    --alert-low-bg: #ecfdf5;
+    --alert-low-text: #047857;
+}
+
+/* ===== GESTION DES TÂCHES ===== */
+.task-container {
+    background: var(--admin-bg-secondary) !important;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.task-stats-card {
+    background: var(--admin-bg-primary) !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--admin-shadow) !important;
+    transition: all 0.3s ease !important;
+}
+
+.task-stats-card:hover {
+    box-shadow: var(--admin-shadow-hover) !important;
+    transform: translateY(-2px) !important;
+}
+
+.task-stats-card.todo {
+    background: var(--status-todo-bg) !important;
+    border-color: var(--status-todo) !important;
+    color: var(--status-todo-text) !important;
+}
+
+.task-stats-card.progress {
+    background: var(--status-progress-bg) !important;
+    border-color: var(--status-progress) !important;
+    color: var(--status-progress-text) !important;
+}
+
+.task-stats-card.done {
+    background: var(--status-done-bg) !important;
+    border-color: var(--status-done) !important;
+    color: var(--status-done-text) !important;
+}
+
+.task-stats-card.urgent {
+    background: var(--status-urgent-bg) !important;
+    border-color: var(--status-urgent) !important;
+    color: var(--status-urgent-text) !important;
+}
+
+.task-stats-card.overdue {
+    background: var(--status-overdue-bg) !important;
+    border-color: var(--status-overdue) !important;
+    color: var(--status-overdue-text) !important;
+}
+
+.kanban-column {
+    background: var(--admin-bg-primary) !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 12px !important;
+    box-shadow: var(--admin-shadow) !important;
+    min-height: 600px;
+}
+
+.kanban-header {
+    background: var(--admin-bg-tertiary) !important;
+    border-bottom: 1px solid var(--admin-border) !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 12px 12px 0 0 !important;
+    font-weight: 600 !important;
+    color: var(--admin-text-primary) !important;
+}
+
+.kanban-body {
+    padding: 1rem !important;
+    min-height: 500px;
+}
+
+.task-card-item {
+    background: var(--admin-bg-primary) !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 8px !important;
+    padding: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    box-shadow: var(--admin-shadow) !important;
+    transition: all 0.3s ease !important;
+    cursor: move;
+}
+
+.task-card-item:hover {
+    box-shadow: var(--admin-shadow-hover) !important;
+    transform: translateY(-1px) !important;
+    border-color: var(--admin-border-hover) !important;
+}
+
+.task-title {
+    font-weight: 600 !important;
+    color: var(--admin-text-primary) !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+}
+
+.task-description {
+    color: var(--admin-text-secondary) !important;
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.task-priority-badge {
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 6px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+}
+
+.priority-urgent {
+    background: var(--status-urgent-bg) !important;
+    color: var(--status-urgent-text) !important;
+}
+
+.priority-high {
+    background: var(--status-progress-bg) !important;
+    color: var(--status-progress-text) !important;
+}
+
+.priority-medium {
+    background: var(--status-todo-bg) !important;
+    color: var(--status-todo-text) !important;
+}
+
+.priority-low {
+    background: var(--status-done-bg) !important;
+    color: var(--status-done-text) !important;
+}
+
+.task-due-date {
+    font-size: 0.8rem !important;
+    color: var(--admin-text-muted) !important;
+}
+
+.task-due-date.overdue {
+    color: var(--status-urgent-text) !important;
+    font-weight: 600 !important;
+}
+
+.task-assignee {
+    font-size: 0.8rem !important;
+    color: var(--admin-text-muted) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+}
+
+.btn-task-action {
+    background: var(--admin-bg-primary) !important;
+    border: 1px solid var(--admin-border) !important;
+    color: var(--admin-text-secondary) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-task-action:hover {
+    background: var(--admin-bg-tertiary) !important;
+    border-color: var(--admin-border-hover) !important;
+    color: var(--admin-text-primary) !important;
+    transform: translateY(-1px) !important;
+}
+
+.btn-task-primary {
+    background: var(--status-todo) !important;
+    border-color: var(--status-todo) !important;
+    color: white !important;
+}
+
+.btn-task-primary:hover {
+    background: #4f46e5 !important;
+    border-color: #4f46e5 !important;
+    color: white !important;
+}
+
+/* ===== AGENDA HEBDOMADAIRE ===== */
+.agenda-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: var(--admin-bg-secondary) !important;
+    min-height: 100vh;
+}
+
+.agenda-header {
+    background: var(--admin-bg-primary) !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 16px !important;
+    padding: 2rem !important;
+    margin-bottom: 2rem !important;
+    color: var(--admin-text-primary) !important;
+    box-shadow: var(--admin-shadow) !important;
+}
+
+.day-card {
+    background: var(--admin-bg-primary) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--admin-shadow) !important;
+    border: 1px solid var(--admin-border) !important;
+    overflow: hidden;
+    transition: all 0.3s !important;
+}
+
+.day-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--admin-shadow-hover) !important;
+}
+
+.day-header {
+    padding: 1.25rem 1.5rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    font-size: 1.1rem !important;
+}
+
+.day-header.lundi { background: #2563eb !important; }
+.day-header.mardi { background: #0891b2 !important; }
+.day-header.mercredi { background: #d97706 !important; }
+.day-header.jeudi { background: #059669 !important; }
+.day-header.vendredi { background: #dc2626 !important; }
+.day-header.samedi { background: #7c3aed !important; }
+.day-header.dimanche { background: #6b7280 !important; }
+
+.day-content {
+    padding: 1.5rem !important;
+}
+
+.event-card {
+    background: var(--admin-bg-primary) !important;
+    border-radius: 8px !important;
+    padding: 1rem !important;
+    border: 1px solid var(--admin-border) !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--admin-shadow) !important;
+}
+
+.event-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--admin-shadow-hover) !important;
+    border-color: var(--admin-border-hover) !important;
+}
+
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.event-card.priority-urgent::before { background: var(--status-urgent) !important; }
+.event-card.priority-high::before { background: var(--status-progress) !important; }
+.event-card.priority-medium::before { background: var(--status-todo) !important; }
+.event-card.priority-low::before { background: var(--status-done) !important; }
+
+/* ===== ALERTES DE PRIX ===== */
+.alerts-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--admin-bg-secondary) !important;
+    min-height: 100vh;
+}
+
+.alerts-header {
+    background: var(--admin-bg-primary) !important;
+    border: 1px solid var(--admin-border) !important;
+    color: var(--admin-text-primary) !important;
+    padding: 2rem !important;
+    border-radius: 12px !important;
+    margin-bottom: 2rem !important;
+    box-shadow: var(--admin-shadow) !important;
+}
+
+.alert-card {
+    background: var(--admin-bg-primary) !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    box-shadow: var(--admin-shadow) !important;
+    transition: all 0.3s ease !important;
+}
+
+.alert-card:hover {
+    box-shadow: var(--admin-shadow-hover) !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--admin-border-hover) !important;
+}
+
+.alert-card.critical {
+    border-left: 4px solid var(--alert-critical) !important;
+    background: var(--alert-critical-bg) !important;
+}
+
+.alert-card.high {
+    border-left: 4px solid var(--alert-high) !important;
+    background: var(--alert-high-bg) !important;
+}
+
+.alert-card.medium {
+    border-left: 4px solid var(--alert-medium) !important;
+    background: var(--alert-medium-bg) !important;
+}
+
+.alert-card.low {
+    border-left: 4px solid var(--alert-low) !important;
+    background: var(--alert-low-bg) !important;
+}
+
+.alert-title {
+    font-weight: 600 !important;
+    color: var(--admin-text-primary) !important;
+    margin-bottom: 0.5rem !important;
+    font-size: 1.1rem !important;
+}
+
+.alert-description {
+    color: var(--admin-text-secondary) !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.5 !important;
+}
+
+.alert-severity {
+    padding: 0.25rem 0.75rem !important;
+    border-radius: 6px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+}
+
+.severity-critical {
+    background: var(--alert-critical) !important;
+    color: white !important;
+}
+
+.severity-high {
+    background: var(--alert-high) !important;
+    color: white !important;
+}
+
+.severity-medium {
+    background: var(--alert-medium) !important;
+    color: white !important;
+}
+
+.severity-low {
+    background: var(--alert-low) !important;
+    color: white !important;
+}
+
+.alert-price {
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    color: var(--admin-text-primary) !important;
+}
+
+.alert-change {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+}
+
+.change-increase {
+    color: var(--alert-critical) !important;
+}
+
+.change-decrease {
+    color: var(--alert-low) !important;
+}
+
+.btn-alert {
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid var(--admin-border) !important;
+    background: var(--admin-bg-primary) !important;
+    color: var(--admin-text-secondary) !important;
+}
+
+.btn-alert:hover {
+    background: var(--admin-bg-tertiary) !important;
+    border-color: var(--admin-border-hover) !important;
+    color: var(--admin-text-primary) !important;
+    transform: translateY(-1px) !important;
+}
+
+.btn-alert-primary {
+    background: var(--alert-critical) !important;
+    border-color: var(--alert-critical) !important;
+    color: white !important;
+}
+
+.btn-alert-primary:hover {
+    background: #b91c1c !important;
+    border-color: #b91c1c !important;
+    color: white !important;
+}
+
+/* ===== FORCER LES COULEURS SUR LES ÉLÉMENTS EXISTANTS ===== */
+.card.bg-primary { background: var(--status-todo-bg) !important; color: var(--status-todo-text) !important; }
+.card.bg-secondary { background: var(--status-todo-bg) !important; color: var(--status-todo-text) !important; }
+.card.bg-warning { background: var(--status-progress-bg) !important; color: var(--status-progress-text) !important; }
+.card.bg-success { background: var(--status-done-bg) !important; color: var(--status-done-text) !important; }
+.card.bg-danger { background: var(--status-urgent-bg) !important; color: var(--status-urgent-text) !important; }
+.card.bg-dark { background: var(--status-overdue-bg) !important; color: var(--status-overdue-text) !important; }
+
+.badge.bg-danger { background: var(--status-urgent) !important; color: white !important; }
+.badge.bg-warning { background: var(--status-progress) !important; color: white !important; }
+.badge.bg-info { background: var(--status-todo) !important; color: white !important; }
+.badge.bg-secondary { background: var(--status-done) !important; color: white !important; }
+
+/* ===== AMÉLIORATION DE LA LISIBILITÉ ===== */
+.text-muted { color: var(--admin-text-muted) !important; }
+.text-primary { color: var(--admin-text-primary) !important; }
+.text-secondary { color: var(--admin-text-secondary) !important; }
+
+.card { background: var(--admin-bg-primary) !important; border: 1px solid var(--admin-border) !important; }
+.card-header { background: var(--admin-bg-tertiary) !important; border-bottom: 1px solid var(--admin-border) !important; }
+.card-body { color: var(--admin-text-primary) !important; }
+
+.btn-primary { background: var(--status-todo) !important; border-color: var(--status-todo) !important; }
+.btn-success { background: var(--status-done) !important; border-color: var(--status-done) !important; }
+.btn-warning { background: var(--status-progress) !important; border-color: var(--status-progress) !important; }
+.btn-danger { background: var(--status-urgent) !important; border-color: var(--status-urgent) !important; }

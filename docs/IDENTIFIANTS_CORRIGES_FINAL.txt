@@ -1,0 +1,81 @@
+================================================================================
+                    IDENTIFIANTS DE CONNEXION - PLATEFORME CSAR
+                              ✅ CORRIGÉS ET TESTÉS
+================================================================================
+
+📌 TOUS LES COMPTES UTILISENT LE MÊME MOT DE PASSE: password
+
+⚠️  IMPORTANT: Effacez le cache de votre navigateur ou utilisez le mode privé/incognito
+   pour éviter les erreurs "419 PAGE EXPIRED"
+
+================================================================================
+
+👨‍💼 ADMINISTRATEUR
+   URL:        http://localhost:8000/admin/login
+   Email:      admin@csar.sn
+   Password:   password
+   Role ID:    1
+
+👔 DIRECTEUR GÉNÉRAL (DG)
+   URL:        http://localhost:8000/dg/login
+   Email:      dg@csar.sn
+   Password:   password
+   Role ID:    2
+
+👤 RESPONSABLE ENTREPÔT
+   URL:        http://localhost:8000/entrepot/login
+   Email:      responsable@csar.sn
+   Password:   password
+   Role ID:    3
+
+👷 AGENT
+   URL:        http://localhost:8000/agent/login
+   Email:      agent@csar.sn
+   Password:   password
+   Role ID:    4
+
+👨‍💼 DIRECTEUR DES RESSOURCES HUMAINES (DRH)
+   URL:        http://localhost:8000/drh/login
+   Email:      drh@csar.sn
+   Password:   password
+   Role ID:    5
+
+================================================================================
+
+🔧 CORRECTIONS APPORTÉES:
+
+1. ✅ Création des rôles dans la table 'roles' (IDs 1-5)
+2. ✅ Attribution des role_id corrects à tous les utilisateurs
+3. ✅ Correction du middleware RedirectIfAuthenticated pour inclure DRH
+4. ✅ Nettoyage des caches Laravel
+
+================================================================================
+
+💡 EN CAS DE PROBLÈME:
+
+1. Videz le cache du navigateur (Ctrl+Shift+Delete)
+2. Ou utilisez le mode navigation privée/incognito
+3. Vérifiez que le serveur Laravel est en cours d'exécution:
+   C:\xampp\php\php.exe artisan serve
+
+4. Si problème persiste, exécutez:
+   C:\xampp\php\php.exe artisan optimize:clear
+
+================================================================================
+
+📅 Dernière mise à jour: 03 Octobre 2025
+================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+

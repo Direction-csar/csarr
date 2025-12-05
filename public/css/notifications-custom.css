@@ -1,0 +1,213 @@
+/**
+ * Personnalisation des couleurs du système de notifications CSAR
+ * Modifiez ce fichier pour adapter le design à votre charte graphique
+ */
+
+:root {
+    /* Couleurs principales - Thème CSAR */
+    --notification-primary: #667eea;      /* Bleu principal CSAR */
+    --notification-success: #51cf66;      /* Vert succès */
+    --notification-warning: #ffd43b;      /* Jaune/Orange avertissement */
+    --notification-danger: #ff6b6b;       /* Rouge erreur */
+    --notification-info: #74c0fc;         /* Bleu clair info */
+    --notification-purple: #764ba2;       /* Violet CSAR */
+    
+    /* Dégradés modernes */
+    --notification-gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --notification-gradient-success: linear-gradient(135deg, #51cf66 0%, #38d39f 100%);
+    --notification-gradient-warning: linear-gradient(135deg, #ffd43b 0%, #ffa726 100%);
+    --notification-gradient-danger: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    
+    /* Ombres et effets */
+    --notification-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+    --notification-shadow-hover: 0 8px 25px rgba(102, 126, 234, 0.25);
+    
+    /* Animations */
+    --notification-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Personnalisation de l'icône cloche */
+.notification-bell-btn {
+    color: #667eea !important;
+}
+
+.notification-bell-btn:hover {
+    color: #764ba2 !important;
+}
+
+/* Badge de compteur - Plus visible */
+.notification-badge {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%) !important;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+    font-weight: 700;
+}
+
+/* En-tête du dropdown */
+.notification-dropdown .dropdown-header {
+    background: var(--notification-gradient-primary) !important;
+}
+
+/* Items non lus - Plus visibles */
+.notification-item.unread {
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.08), transparent) !important;
+    border-left-color: var(--notification-primary) !important;
+}
+
+.notification-item.unread::before {
+    background: var(--notification-primary) !important;
+}
+
+/* Icônes de notification selon le type */
+.bg-demande-soft {
+    background: rgba(102, 126, 234, 0.12) !important;
+}
+
+.bg-message-soft {
+    background: rgba(116, 192, 252, 0.12) !important;
+}
+
+.bg-newsletter-soft {
+    background: rgba(81, 207, 102, 0.12) !important;
+}
+
+.bg-communication-soft {
+    background: rgba(118, 75, 162, 0.12) !important;
+}
+
+/* Couleurs des textes d'icônes */
+.text-demande {
+    color: #667eea !important;
+}
+
+.text-message {
+    color: #74c0fc !important;
+}
+
+.text-newsletter {
+    color: #51cf66 !important;
+}
+
+.text-communication {
+    color: #764ba2 !important;
+}
+
+/* Boutons d'action */
+.notification-actions .btn-outline-primary {
+    border-color: var(--notification-primary);
+    color: var(--notification-primary);
+}
+
+.notification-actions .btn-outline-primary:hover {
+    background: var(--notification-primary);
+    border-color: var(--notification-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Statistiques sur la page complète */
+.stat-card {
+    background: white;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.stat-card:hover {
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+}
+
+/* Bouton "Tout marquer comme lu" */
+.btn-primary {
+    background: var(--notification-gradient-primary) !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* Filtres de notifications */
+.btn-group .btn.active {
+    background: var(--notification-gradient-primary) !important;
+    color: white !important;
+    border-color: transparent !important;
+}
+
+/* Animation d'entrée plus fluide */
+@keyframes notificationSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.notification-item {
+    animation: notificationSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Badge "Nouveau" plus visible */
+.badge.bg-primary {
+    background: var(--notification-gradient-primary) !important;
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+}
+
+/* Mode sombre - Couleurs adaptées */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --notification-primary: #7c92ff;
+        --notification-success: #63e377;
+        --notification-warning: #ffe066;
+        --notification-danger: #ff8787;
+        --notification-info: #8dc9ff;
+    }
+    
+    .notification-dropdown {
+        background: #1e1e1e;
+        border: 1px solid #333;
+    }
+    
+    .notification-item {
+        border-color: #333 !important;
+    }
+    
+    .stat-card {
+        background: #2a2a2a;
+        border-color: #444;
+    }
+}
+
+/* Effet de pulse sur les nouvelles notifications */
+@keyframes notificationPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+    }
+}
+
+.notification-item.unread {
+    animation: notificationPulse 2s infinite;
+}
+
+/* Amélioration du hover sur les items */
+.notification-item:hover {
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.12), rgba(118, 75, 162, 0.05)) !important;
+    transform: translateX(6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Scrollbar personnalisée avec couleurs CSAR */
+.notification-dropdown::-webkit-scrollbar-thumb {
+    background: var(--notification-gradient-primary);
+    border-radius: 10px;
+}
+
+.notification-dropdown::-webkit-scrollbar-thumb:hover {
+    background: var(--notification-purple);
+}
+

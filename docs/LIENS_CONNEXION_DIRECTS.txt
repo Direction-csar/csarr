@@ -1,0 +1,47 @@
+═══════════════════════════════════════════════════════════════
+    ✅ CONNEXION - LIENS DIRECTS À COPIER DANS LE NAVIGATEUR
+═══════════════════════════════════════════════════════════════
+
+👤 ADMINISTRATEUR
+   🌐 http://localhost:8000/admin/login
+   📧 admin@csar.sn
+   🔑 password
+
+👔 DIRECTEUR GÉNÉRAL (DG)
+   🌐 http://localhost:8000/dg/login
+   📧 dg@csar.sn
+   🔑 password
+
+📦 RESPONSABLE D'ENTREPÔT
+   🌐 http://localhost:8000/entrepot/login
+   📧 responsable@csar.sn
+   🔑 password
+
+🚚 AGENT CSAR
+   🌐 http://localhost:8000/agent/login
+   📧 agent@csar.sn
+   🔑 password
+
+═══════════════════════════════════════════════════════════════
+
+🚀 IMPORTANT : Utilisez les URLs SPÉCIFIQUES ci-dessus !
+           Pas seulement /login
+
+✅ Tous les comptes sont maintenant ACTIFS et FONCTIONNELS
+
+═══════════════════════════════════════════════════════════════
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

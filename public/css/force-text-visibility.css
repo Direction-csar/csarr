@@ -1,0 +1,84 @@
+/* ========================================
+   FORCE LA VISIBILITÉ DES TEXTES
+   CSAR Platform - Correction ultime
+   ======================================== */
+
+/* Force absolue pour tous les textes */
+body, body * {
+    color: #1e293b !important;
+}
+
+/* Correction spécifique pour les formulaires */
+input, select, textarea, option {
+    color: #1e293b !important;
+    background-color: #ffffff !important;
+}
+
+/* Correction des labels */
+label, .form-label {
+    color: #1e293b !important;
+    font-weight: 500 !important;
+}
+
+/* Correction des titres */
+h1, h2, h3, h4, h5, h6 {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+/* Correction des cartes */
+.card, .card * {
+    color: #1e293b !important;
+}
+
+/* Correction des listes */
+ul, ol, li {
+    color: #1e293b !important;
+}
+
+/* Correction des textes dans les sections d'aide */
+.list-unstyled li {
+    color: #1e293b !important;
+}
+
+.list-unstyled li strong {
+    color: #1e293b !important;
+    font-weight: 600 !important;
+}
+
+/* Correction des descriptions */
+.form-text {
+    color: #64748b !important;
+}
+
+/* Correction des boutons */
+.btn {
+    color: inherit !important;
+}
+
+.btn-primary {
+    color: white !important;
+}
+
+.btn-secondary {
+    color: white !important;
+}
+
+.btn-outline-primary {
+    color: #2563eb !important;
+}
+
+/* Correction spécifique pour les pages de tâches */
+.tasks-container, .tasks-container * {
+    color: #1e293b !important;
+}
+
+/* Correction spécifique pour l'agenda */
+.agenda-container, .agenda-container * {
+    color: #1e293b !important;
+}
+
+/* Correction spécifique pour les alertes de prix */
+.price-alerts-container, .price-alerts-container * {
+    color: #1e293b !important;
+}

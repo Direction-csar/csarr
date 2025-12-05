@@ -31,10 +31,26 @@ class ChiffreCle extends Model
     public static function safeGetActifs()
     {
         try {
+            // Vérifier d'abord si la table existe
             if (!self::tableExists()) {
                 return collect();
             }
-            return self::actifs()->ordered()->get();
+            
+            // Essayer de récupérer les données avec une double vérification
+            try {
+                // Utiliser DB::table directement pour éviter les problèmes avec Eloquent
+                $results = \Illuminate\Support\Facades\DB::table('chiffres_cles')
+                    ->where('statut', 'Actif')
+                    ->orderBy('ordre')
+                    ->get()
+                    ->map(function ($item) {
+                        return new self((array) $item);
+                    });
+                return $results;
+            } catch (\Exception $e) {
+                // Si même DB::table échoue, retourner une collection vide
+                return collect();
+            }
         } catch (\Exception $e) {
             return collect();
         }

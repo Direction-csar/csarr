@@ -57,10 +57,7 @@ class HomeController extends Controller
             } else {
                 // Essayer de récupérer les chiffres clés, avec fallback en cas d'erreur
                 try {
-                    $chiffresCles = \App\Models\ChiffreCle::actifs()
-                        ->ordered()
-                        ->get()
-                        ->keyBy('titre');
+                    $chiffresCles = \App\Models\ChiffreCle::safeGetActifs()->keyBy('titre');
                     
                     $stats = [
                         'agents' => $chiffresCles->get('Agents mobilisés', (object)['valeur' => '0'])->valeur ?? '0',

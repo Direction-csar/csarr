@@ -17,7 +17,27 @@ class ChiffreCle extends Model
      */
     public static function tableExists()
     {
-        return Schema::hasTable('chiffres_cles');
+        try {
+            return Schema::hasTable('chiffres_cles');
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+    
+    /**
+     * Méthode statique sécurisée pour récupérer les chiffres clés actifs
+     * Retourne une collection vide si la table n'existe pas
+     */
+    public static function safeGetActifs()
+    {
+        try {
+            if (!self::tableExists()) {
+                return collect();
+            }
+            return self::actifs()->ordered()->get();
+        } catch (\Exception $e) {
+            return collect();
+        }
     }
 
     protected $fillable = [

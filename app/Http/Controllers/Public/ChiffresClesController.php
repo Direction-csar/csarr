@@ -25,9 +25,7 @@ class ChiffresClesController extends Controller
             
             // Essayer de récupérer les chiffres clés, avec fallback en cas d'erreur
             try {
-                $chiffresCles = ChiffreCle::actifs()
-                    ->ordered()
-                    ->get()
+                $chiffresCles = ChiffreCle::safeGetActifs()
                     ->map(function ($chiffre) {
                         return [
                             'id' => $chiffre->id,
@@ -70,9 +68,7 @@ class ChiffresClesController extends Controller
             
             // Essayer de récupérer les chiffres clés, avec fallback en cas d'erreur
             try {
-                return ChiffreCle::actifs()
-                    ->ordered()
-                    ->get();
+                return ChiffreCle::safeGetActifs();
             } catch (\Exception $e) {
                 // En cas d'erreur, retourner une collection vide
                 return collect();
